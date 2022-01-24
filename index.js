@@ -4,10 +4,6 @@ const path = require('path');
 const app =  express();
 const cors = require('cors');
 
-var corsOptions = {
-    origin: 'http://localhost:8081',
-};
-
 const routes = require('./routes/index');
 const userData = require('./routes/users');
 const reviewData = require('./routes/reviews');

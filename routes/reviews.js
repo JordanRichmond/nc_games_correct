@@ -48,7 +48,7 @@ const getReviewComments = async (req, res, next) => {
 // Creates a comment for a review
 const createReviewComment = async (req, res, next) => {
     try {
-        const result = await db.query('INSERT INTO comments (review_id, comment) VALUES ($1, $2) RETURNING *', [req.params.review_id, req.body.comment]);
+        const result = await db.query('INSERT INTO comments (review_id, author, body) VALUES ($1, $2, $3) RETURNING *', [req.params.review_id, req.body.username, req.body.body]);
         res.json(result.rows);
     } catch (err) {
         next(err);

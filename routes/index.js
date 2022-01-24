@@ -1,3 +1,5 @@
+const endPoints = require('../endpoints.json')
+
 exports.index = function (req, res) {
-  res.send('Hello World');
+  res.send(endPoints);
 }
